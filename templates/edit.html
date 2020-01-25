@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+    <h3>{{ title }}</h3>
+    <form method="POST" action="/buku/edit/{{ data._id }}">
+        <table>
+            <tr>
+                <td>Penulis</td>
+                <td>:&nbsp;<input type="text" name="penulis" id="penulis" value="{{ data.penulis }}"/></td>
+            </tr>
+            <tr>
+                <td>Judul</td>
+                <td>:&nbsp;<input type="text" name="judul" id="judul" value="{{ data.judul }}"/></td>
+            </tr>
+            <tr>
+                <td>Kota</td>
+                <td>:&nbsp;<input type="text" name="kota" id="kota" value="{{ data.kota }}"/></td>
+            </tr>
+            <tr>
+                <td>Penerbit</td>
+                <td>:&nbsp;<input type="text" name="penerbit" id="penerbit" value="{{ data.penerbit }}"/></td>
+            </tr>
+            <tr>
+                <td>Tahun</td>
+                <td>:&nbsp;<input type="text" name="tahun" id="tahun" value="{{ data.tahun }}"/></td>
+            </tr>
+        </table>
+        <button type="submit">Simpan</button>
+    </form>
+{% endblock %}
